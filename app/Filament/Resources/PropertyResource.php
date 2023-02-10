@@ -32,6 +32,7 @@ class PropertyResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('id'),
+                Tables\Columns\TextColumn::make('uuid'),
                 Tables\Columns\TextColumn::make('name'),
             ])
             ->filters([

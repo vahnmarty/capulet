@@ -21,6 +21,7 @@ class PropertyFactory extends Factory
     public function definition()
     {
         return [
+            'uuid' => $this->generateUuid(),
             'name' => fake()->name(),
             'description' => fake()->realText(),
             'address1' => fake()->streetAddress,
@@ -34,5 +35,12 @@ class PropertyFactory extends Factory
             'gate_code' => fake()->postcode,
             'door_code' => fake()->postcode,
         ];
+    }
+
+    function generateUuid() {
+        $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        $first_part = substr(str_shuffle($chars), 0, 3);
+        $second_part = substr(str_shuffle($chars), 0, 3);
+        return "#" . $first_part . "-" . $second_part;
     }
 }
