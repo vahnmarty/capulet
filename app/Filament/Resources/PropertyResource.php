@@ -24,6 +24,19 @@ class PropertyResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')->required(),
+                Forms\Components\TextInput::make('description'),
+                Forms\Components\TextInput::make('address1'),
+                Forms\Components\TextInput::make('address2'),
+                Forms\Components\TextInput::make('city'),
+                Forms\Components\TextInput::make('state'),
+                Forms\Components\TextInput::make('zip'),
+                Forms\Components\TextInput::make('contact_name'),
+                Forms\Components\TextInput::make('contact_phone'),
+                Forms\Components\TextInput::make('contact_email')->email(),
+                Forms\Components\TextInput::make('gate_code'),
+                Forms\Components\TextInput::make('door_code'),
+                Forms\Components\TextInput::make('notes'),
+                Forms\Components\TextInput::make('checklist_id'),
             ]);
     }
 
